@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Data Retrieval</title>
+</head>
+
+<body>
+    <h1>Financial Data Retrieval</h1>
+
+    <form id="data-form">
+        <label for="stock_symbol">Enter Stock Symbol:</label>
+        <input type="text" id="stock_symbol" name="stock_symbol" required>
+        <button type="submit">Get Financial Data</button>
+    </form>
+
+    <div id="financial-data">
+        <!-- Financial data will be displayed here -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#data-form').submit(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    url: '/get_data',  // Updated URL to match the route in app.py
+                    data: $('#data-form').serialize(),
+                    success: function (response) {
+                        $('#financial-data').html(response);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

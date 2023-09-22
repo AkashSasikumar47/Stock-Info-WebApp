@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Data</title>
+</head>
+
+<body>
+    <h1>Financial Data for {{ stock_symbol }}</h1>
+    <h2>Fundamental Data</h2>
+    <p>Earnings Per Share (EPS): {{ eps }}</p>
+    <p>Price-to-Earnings (P/E) Ratio: {{ pe_ratio }}</p>
+    <p>Dividend Yield: {{ dividend_yield }}</p>
+
+    <h2>Recent News</h2>
+    <ul>
+        {% for article in articles %}
+        <li>
+            <h3>{{ article.title }}</h3>
+            <p>Sentiment: {{ article.sentiment }}</p>
+            <p>{{ article.content }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">Back to Home</a>
+</body>
+
+</html>
