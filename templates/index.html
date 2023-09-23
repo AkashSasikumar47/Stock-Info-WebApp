@@ -20,15 +20,6 @@
             <button type="submit" class="button">Get Financial Data</button>
         </form>
 
-        <!-- Display stock data here -->
-        <div id="financial-data">
-            {% if stock_symbol %}
-            <h3>Stock Symbol: {{ stock_symbol }}</h3>
-            <p>Earnings Per Share (EPS): {{ eps }}</p>
-            <p>Price-to-Earnings (P/E) Ratio: {{ pe_ratio }}</p>
-            <p>Dividend Yield: {{ dividend_yield }}</p>
-            {% endif %}
-        </div>
     </div>
 
     <!-- Include jQuery if not already included -->
