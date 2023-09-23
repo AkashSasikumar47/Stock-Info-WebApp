@@ -1,4 +1,9 @@
-/* General Styles */
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
 
 h1 {
     color: #000;
@@ -16,6 +21,11 @@ h6 {
     font-family: 'Martian Mono', monospace;
     font-size: 20px;
     font-weight: 500;
+}
+
+body {
+    font-family: 'Martian Mono', monospace;
+    color: #444444;
 }
 
 .button {
