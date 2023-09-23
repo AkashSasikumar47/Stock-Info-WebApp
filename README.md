@@ -1,12 +1,17 @@
 # Stock-Info-WebApp 📈📰
 
-Stock-Info-WebApp is a Flask-based web application that allows you to retrieve financial data and recent news articles for a given stock symbol. Stay informed about your favorite stocks with real-time insights into Earnings Per Share (EPS), Price-to-Earnings (P/E) Ratio, Dividend Yield, and access the latest stock news.
+This is a simple web app built with Flask that allows users to retrieve financial data for a given stock symbol. The app utilizes the Alpha Vantage API to fetch stock-related information such as Earnings Per Share (EPS), Price-to-Earnings (P/E) ratio, and Dividend Yield.
 
 ## Features
 
-- Retrieve essential financial data for a stock.
-- Access the top 5 recent news articles related to the stock.
-- User-friendly web interface for easy data retrieval.
+- **Stock Data Retrieval**: Retrieve essential financial data for a given stock symbol, including Earnings Per Share (EPS), Price-to-Earnings (P/E) ratio, and Dividend Yield.
+
+- **User-Friendly Interface**: The web app provides a simple and intuitive interface for users to enter stock symbols and view financial information.
+
+- **Customizable**: Easily customize the app by adding more features or modifying the frontend to meet your specific requirements.
+
+- **Contributions Welcome**: Open to contributions from the community. Feel free to contribute to the project by submitting issues or pull requests.
+
 
 ## Getting Started
 
@@ -30,7 +35,7 @@ Stock-Info-WebApp is a Flask-based web application that allows you to retrieve f
 
 3. Set up your API keys:
     
-    Replace ALPHA_VANTAGE_API_KEY and NEWS_API_KEY in the financial_data.py file with your actual API keys.
+    Replace **ALPHA_VANTAGE_API_KEY** in the financial_data.py file with your actual API key.
 
 4. Run the application:
 
@@ -41,9 +46,9 @@ Stock-Info-WebApp is a Flask-based web application that allows you to retrieve f
 
 ## Usage
 
-- Enter a stock symbol in the input field and click "Get Financial Data" to retrieve information.
-- View fundamental data such as EPS, P/E Ratio, and Dividend Yield.
-- See recent news articles related to the stock.
+- Enter a stock symbol in the provided input field on the homepage.
+- Click the "Get Data" button.
+- The app will fetch and display information about the stock, including Earnings Per Share (EPS), Price-to-Earnings (P/E) ratio, and Dividend Yield on the result page.
 
 ## License
 
@@ -51,5 +56,4 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 ## Acknowledgments
 
-- Alpha Vantage API
-- News API
+**Alpha Vantage API**
