@@ -8,7 +8,7 @@
 h1 {
     color: #000;
     font-family: 'Syne', sans-serif;
-    font-size: 64px;
+    font-size: 32px;
     font-weight: 700;
 }
 
@@ -19,8 +19,9 @@ h5,
 h6 {
     color: #000;
     font-family: 'Martian Mono', monospace;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
+    margin-bottom: 32px;
 }
 
 body {
@@ -29,109 +30,155 @@ body {
 }
 
 .button {
-    display: flex;
-    width: 128px;
-    padding: 10px 35px;
-    justify-content: space-between;
+    display: inline-block;
+    height: 36px;
+    padding: 8px 16px;
     align-items: center;
     border-radius: 8px;
     background: linear-gradient(78deg, rgba(0, 33, 107, 0.20) 0%, rgba(0, 79, 255, 0.20) 100%), linear-gradient(282deg, #000 0%, #626262 100%);
     color: #fff;
-    font-size: 16px;
+    font-size: 12px;
     text-decoration: none;
     border: none;
     cursor: pointer;
     transition: background 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .button:hover {
-    background: linear-gradient(78deg, rgba(0, 33, 107, 0.40) 0%, rgba(0, 79, 255, 0.40) 100%), linear-gradient(282deg, #333 0%, #555 100%);
+    background: linear-gradient(78deg, rgba(0, 33, 107, 0.35) 0%, rgba(0, 79, 255, 0.35) 100%), linear-gradient(282deg, #333 0%, #999 100%);
+    box-shadow: 0 10px 12px rgba(0, 33, 107, 0.20);
 }
 
-/* Navbar Styles */
-.navbar {
-    background: #fff;
-    padding: 10px 20px;
+/* Button Styles for Mobile View */
+@media (max-width: 768px) {
+    .button {
+        min-width: 80px;
+        padding: 0;
+        font-size: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+    height: 80px;
+    padding: 20px 0;
+    z-index: 10;
+    position: relative;
+}
+
+#header .logo img {
+    padding: 0;
+    margin: 0;
+    max-height: 48px;
+}
+
+@media (max-width: 768px) {
+    #header .logo img {
+        max-height: 32px;
+    }
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero .hero-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
-.navbar .logo {
-    margin-left: 20px;
+#hero .left-column {
+    flex: 1.5;
+    padding: 64px;
+    text-align: left;
 }
 
-/* Hero Section Styles */
-.hero {
+#hero .right-column {
+    flex: 1;
+    padding: 32px;
+    text-align: center;
+}
+
+#hero .right-column img {
+    max-width: 100%;
+    height: auto;
+}
+
+.flex-container {
     display: flex;
     align-items: center;
-    padding: 80px 0;
+    gap: 24px;
 }
 
-.hero-image {
-    flex: 1;
-    padding: 0 20px;
+/* Adjustments for the hero section on smaller screens */
+@media (max-width: 768px) {
+    #hero .hero-content {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 32px;
+    }
+
+    #hero .left-column {
+        flex: 1;
+        padding: 16px;
+        text-align: center;
+    }
+
+    #hero .left-column h1 {
+        margin-bottom: 48px;
+    }
+
+    #hero .right-column {
+        flex: 1;
+        padding: 16px;
+        text-align: center;
+    }
 }
 
-.hero-image img {
-    max-width: 100%;
-}
-
-.hero-content {
-    flex: 1;
-    padding: 0 20px;
-}
-
-.hero h1 {
-    font-size: 40px;
-    font-weight: 700;
-}
-
-.hero h2 {
-    font-size: 24px;
-    font-weight: 500;
-    margin-top: 10px;
-    color: #777;
-}
-
-/* Search Bar Styles */
+/* Search bar */
 .search-bar {
     display: flex;
-    height: 36px;
+    max-width: 360px;
+    height: 24px;
     padding: 8px;
     align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
-    align-self: stretch;
     border-radius: 8px;
     background: #F5F5F5;
 }
 
-/* Style the input element inside the search bar */
+/* Style the input element inside the search bar for smaller screens */
 .search-bar input {
-    flex: 1;
+    flex: 1 0 0;
+    color: var(--label-colors-lcl-secondary, rgba(60, 60, 67, 0.60));
+    font-family: Martian Mono;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
     border: none;
     outline: none;
-    font-size: 16px;
-}
-
-/* Style the search button inside the search bar */
-.search-bar button {
     background: none;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 16px;
-    color: #007bff;
+    padding: 0;
+    margin-left: 12px;
 }
 
-/* Apply additional styles when the search input is focused */
-.search-bar input:focus {
-    background: #fff;
+/* Adjustments for the input element on smaller screens */
+@media (max-width: 768px) {
+    .search-bar input {
+        font-size: 14px;
+        margin-left: 8px;
+    }
+
+    .flex-container {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
 }

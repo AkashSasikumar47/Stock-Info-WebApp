@@ -2,25 +2,112 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock-Info-WebApp</title>
-    <meta name="description" content="Real-Time Financial Data at Your Fingertips">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Add a descriptive title specific to your brand and content -->
+    <title>Stock-Info-WebApp - Real-time Stock Data and News</title>
+
+    <!-- Add a meta description that summarizes your website's content -->
+    <meta name="description"
+        content="Stay informed with real-time stock data and the latest news articles for your favorite stocks on Stock-Info-WebApp.">
+
+    <!-- Add relevant keywords related to your content -->
+    <meta name="keywords"
+        content="stock market, stock data, news, financial analysis, earnings per share, P/E ratio, dividend yield">
+
+    <!-- Favicons (customize these with your brand logo) -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts (include only the fonts you are using) -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Raleway:400,600,700" rel="stylesheet">
+
+    <!-- Custom Fonts (if needed) -->
+    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (if needed) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Vendor CSS Files (include only the CSS files you need) -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File (include your main stylesheet) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Add canonical URL to specify the preferred version of the page (if applicable) -->
+    <link rel="canonical" href="https://www.yourwebsite.com">
+
+    <!-- Specify the author of the website -->
+    <meta name="author" content="Akash Sasikumar">
+
+    <!-- Add Open Graph metadata for better sharing on social media (customize these tags) -->
+    <meta property="og:title" content="Stock-Info-WebApp - Real-time Stock Data and News">
+    <meta property="og:description"
+        content="Stay informed with real-time stock data and the latest news articles for your favorite stocks on Stock-Info-WebApp.">
+    <meta property="og:image" content="assets/img/og-image.png">
+    <!-- Include a relevant image URL -->
+    <meta property="og:url" content="https://www.yourwebsite.com">
+
 </head>
 
 <body>
-    <div class="container">
-        <h1>Stock-Info-WebApp</h1>
-        <h2>Real-Time Financial Data at Your Fingertips</h2>
 
-        <form id="data-form" class="search-bar" method="POST" action="/get_data">
-            <label for="stock_symbol">Enter Stock Symbol:</label>
-            <input type="text" id="stock_symbol" name="stock_symbol" required>
-            <button type="submit" class="button">Get Financial Data</button>
-        </form>
+    <!-- ======= Header ======= -->
+    <header id="header">
+        <div class="container-fluid">
 
-    </div>
+            <div class="logo">
+                <a href="index.html"><img src="static/assets/img/Logo.svg" alt="" class="img-fluid"></a>
+            </div>
+
+        </div>
+    </header><!-- End #header -->
+
+    <!-- ======= Hero ======= -->
+    <section id="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+
+                <div class="left-column">
+                    <h1>Unlock Financial Insights</h1>
+                    <h2>Discover key financial data and market sentiment in seconds.</h2>
+
+                    <form action="/get_data" method="post">
+                        <div class="flex-container">
+                            <div class="search-bar">
+
+                                <div class="search-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"
+                                        fill="none">
+                                        <path
+                                            d="M12.5 17C14.9853 17 17 14.9853 17 12.5C17 10.0147 14.9853 8 12.5 8C10.0147 8 8 10.0147 8 12.5C8 14.9853 10.0147 17 12.5 17Z"
+                                            stroke="#86868A" stroke-width="1.5" stroke-linecap="round" />
+                                        <path d="M16 15.9998L20.0002 20" stroke="#86868A" stroke-width="1.5"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </div>
+
+                                <input type="text" name="stock_symbol" placeholder="Enter stock symbol">
+                                <!-- Added name attribute for the input field -->
+                            </div>
+                            <button type="submit" class="button">Get Data</button>
+                            <!-- Changed button type to "submit" -->
+                        </div>
+                    </form>
+                </div>
+
+                <div class="right-column">
+                    <img src="static/assets/img/Hero-image.svg" alt="Hero Image">
+                </div>
+
+            </div>
+        </div>
+    </section><!-- #hero -->
 
     <!-- Include jQuery if not already included -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -39,6 +126,7 @@
             });
         });
     </script>
+
 </body>
 
 </html>
