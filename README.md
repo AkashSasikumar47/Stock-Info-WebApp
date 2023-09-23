@@ -2,6 +2,8 @@
 
 This is a simple web app built with Flask that allows users to retrieve financial data for a given stock symbol. The app utilizes the Alpha Vantage API to fetch stock-related information such as Earnings Per Share (EPS), Price-to-Earnings (P/E) ratio, and Dividend Yield.
 
+![Stock-Info-WebAp](static/assets/img/og-image.png)
+
 ## Features
 
 - **Stock Data Retrieval**: Retrieve essential financial data for a given stock symbol, including Earnings Per Share (EPS), Price-to-Earnings (P/E) ratio, and Dividend Yield.
