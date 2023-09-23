@@ -2,7 +2,6 @@ import requests
 
 # Replace these placeholders with your actual API keys
 ALPHA_VANTAGE_API_KEY = "API Key"
-NEWS_API_KEY = "API Key"
 
 
 def get_stock_data(stock_symbol):
