@@ -1,26 +1,75 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 20px;
-}
+/* General Styles */
 
 h1 {
-    color: #333;
+    color: #000;
+    font-family: 'Syne', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
 }
 
-form {
-    margin-top: 20px;
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #000;
+    font-family: 'Martian Mono', monospace;
+    font-size: 20px;
+    font-weight: 500;
 }
 
-input[type="text"] {
-    padding: 5px;
-    width: 200px;
-}
-
-button {
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: white;
+.button {
+    display: flex;
+    width: 128px;
+    padding: 10px 35px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    background: linear-gradient(78deg, rgba(0, 33, 107, 0.20) 0%, rgba(0, 79, 255, 0.20) 100%), linear-gradient(282deg, #000 0%, #626262 100%);
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
     border: none;
     cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+    background: linear-gradient(78deg, rgba(0, 33, 107, 0.40) 0%, rgba(0, 79, 255, 0.40) 100%), linear-gradient(282deg, #333 0%, #555 100%);
+}
+
+/* Search Bar Styles */
+.search-bar {
+    display: flex;
+    height: 36px;
+    padding: 8px;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    align-self: stretch;
+    border-radius: 8px;
+    background: #F5F5F5;
+}
+
+/* Style the input element inside the search bar */
+.search-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+/* Style the search button inside the search bar */
+.search-bar button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #007bff;
+}
+
+/* Apply additional styles when the search input is focused */
+.search-bar input:focus {
+    background: #fff;
 }
