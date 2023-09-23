@@ -5,22 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock-Info-WebApp</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> <!-- Link to your CSS file -->
+    <meta name="description" content="Real-Time Financial Data at Your Fingertips">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 
 <body>
     <div class="container">
         <h1>Stock-Info-WebApp</h1>
-        <h2>Real-Time Financial Data and News at Your Fingertips</h2>
+        <h2>Real-Time Financial Data at Your Fingertips</h2>
 
-        <form id="data-form" class="search-bar">
+        <form id="data-form" class="search-bar" method="POST" action="/get_data">
             <label for="stock_symbol">Enter Stock Symbol:</label>
             <input type="text" id="stock_symbol" name="stock_symbol" required>
             <button type="submit" class="button">Get Financial Data</button>
         </form>
 
+        <!-- Display stock data here -->
         <div id="financial-data">
-            <!-- Financial data will be displayed here -->
+            {% if stock_symbol %}
+            <h3>Stock Symbol: {{ stock_symbol }}</h3>
+            <p>Earnings Per Share (EPS): {{ eps }}</p>
+            <p>Price-to-Earnings (P/E) Ratio: {{ pe_ratio }}</p>
+            <p>Dividend Yield: {{ dividend_yield }}</p>
+            {% endif %}
         </div>
     </div>
 
@@ -32,7 +39,7 @@
                 e.preventDefault();
                 $.ajax({
                     type: 'POST',
-                    url: '/get_data',  // Updated URL to match the route in app.py
+                    url: '/get_data',
                     data: $('#data-form').serialize(),
                     success: function (response) {
                         $('#financial-data').html(response);

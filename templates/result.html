@@ -14,17 +14,6 @@
     <p>Price-to-Earnings (P/E) Ratio: {{ pe_ratio }}</p>
     <p>Dividend Yield: {{ dividend_yield }}</p>
 
-    <h2>Recent News</h2>
-    <ul>
-        {% for article in articles %}
-        <li>
-            <h3>{{ article.title }}</h3>
-            <p>Sentiment: {{ article.sentiment }}</p>
-            <p>{{ article.content }}</p>
-        </li>
-        {% endfor %}
-    </ul>
-
     <a href="/">Back to Home</a>
 </body>
 
