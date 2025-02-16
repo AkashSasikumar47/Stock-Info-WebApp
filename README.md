@@ -1,4 +1,4 @@
-# Stock-Info-WebApp 📈📰
+# Stock Info WebApp 📈📰
 
 This is a simple web app built with Flask that allows users to retrieve financial data for a given stock symbol. The app utilizes the Alpha Vantage API to fetch stock-related information such as Earnings Per Share (EPS), Price-to-Earnings (P/E) ratio, and Dividend Yield.
 
@@ -54,7 +54,7 @@ This is a simple web app built with Flask that allows users to retrieve financia
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments
 
